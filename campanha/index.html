@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>MedPronto — Demonstração gratuita do sistema de gestão clínica</title>
+
+  <!-- SEO básico -->
+  <meta name="description" content="Solicite uma demonstração gratuita do MedPronto. Agenda, prontuário eletrônico, faturamento e DRE em uma única plataforma. 7 dias grátis.">
+  <meta name="robots" content="noindex, follow">
+  <link rel="icon" type="image/png" href="/Logo_Medpronto.png">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:url" content="https://www.appmedpronto.com.br/campanha">
+  <meta property="og:title" content="MedPronto — Demonstração gratuita do sistema de gestão clínica">
+  <meta property="og:description" content="Agenda, prontuário, faturamento e DRE em uma única plataforma. 7 dias grátis, sem cartão.">
+  <meta property="og:image" content="https://www.appmedpronto.com.br/Logo_Medpronto.png">
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-DRZEG8L7W1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-DRZEG8L7W1');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet"/>
+
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    :root{
+      --blue:#185FA5;
+      --blue-dark:#0C3D6E;
+      --blue-deep:#0a2d4a;
+      --blue-light:#E6F1FB;
+      --green:#1D9E75;
+      --green-dark:#0F6E56;
+      --green-light:#E1F5EE;
+      --white:#fff;
+      --gray-50:#F8F9FC;
+      --gray-100:#F1F3F8;
+      --gray-200:#E2E6EF;
+      --gray-400:#8A93A8;
+      --gray-600:#4A5568;
+      --gray-800:#1A202C;
+      --font-head:'Plus Jakarta Sans',sans-serif;
+      --font-body:'DM Sans',sans-serif;
+    }
+    html{scroll-behavior:smooth;}
+    body{font-family:var(--font-body);color:var(--gray-800);background:var(--white);overflow-x:hidden;}
+
+    /* ─── NAV simplificado ─── */
+    nav{
+      position:fixed;top:0;left:0;right:0;z-index:100;
+      background:rgba(255,255,255,0.95);backdrop-filter:blur(12px);
+      border-bottom:1px solid var(--gray-200);
+      padding:0 2rem;height:64px;display:flex;align-items:center;
+    }
+    .nav-logo{display:flex;align-items:center;gap:9px;text-decoration:none;}
+    .nav-logo-icon{
+      width:36px;height:36px;border-radius:9px;background:var(--blue);
+      display:flex;align-items:center;justify-content:center;
+    }
+    .nav-logo span{font-family:var(--font-head);font-size:1.15rem;font-weight:800;color:var(--blue);}
+    .nav-spacer{flex:1;}
+    .nav-trust{
+      display:flex;align-items:center;gap:8px;
+      font-size:.82rem;color:var(--gray-600);font-weight:500;
+    }
+    .nav-trust strong{color:var(--green-dark);font-weight:700;}
+
+    /* ─── HERO com 2 colunas ─── */
+    .hero{
+      min-height:100vh;padding:100px 2rem 180px;
+      background:linear-gradient(135deg,#f0f7ff 0%,#fff 55%,#e8faf4 100%);
+      position:relative;overflow:hidden;
+      display:flex;align-items:center;
+    }
+    .hero-inner{
+      max-width:1180px;width:100%;margin:0 auto;
+      display:grid;grid-template-columns:1fr 480px;gap:3.5rem;align-items:center;
+    }
+    .hero-content{position:relative;z-index:2;}
+
+    .hero-badge{
+      display:inline-flex;align-items:center;gap:7px;
+      background:var(--blue-light);border:1px solid rgba(24,95,165,.2);
+      color:var(--blue);padding:5px 14px;border-radius:100px;
+      font-family:var(--font-head);font-size:.74rem;font-weight:700;
+      letter-spacing:.06em;text-transform:uppercase;margin-bottom:1.1rem;
+    }
+    .hero-badge .dot{width:6px;height:6px;border-radius:50%;background:var(--green);}
+
+    h1{
+      font-family:var(--font-head);font-size:clamp(1.7rem,3vw,2.5rem);
+      font-weight:800;line-height:1.15;letter-spacing:-.02em;
+      color:var(--gray-800);margin-bottom:.85rem;
+    }
+    h1 em{color:var(--blue);font-style:normal;}
+
+    .hero-sub{
+      font-size:.98rem;color:var(--gray-600);line-height:1.7;
+      margin-bottom:1.75rem;max-width:520px;
+    }
+
+    .hero-feats{
+      display:grid;grid-template-columns:repeat(2,auto);gap:.6rem 1.5rem;
+      margin-bottom:2rem;max-width:520px;
+    }
+    .hero-feat{
+      display:flex;align-items:center;gap:7px;
+      font-size:.86rem;color:var(--gray-600);font-weight:500;
+    }
+    .hero-feat svg{flex-shrink:0;}
+
+    .testimonial{
+      background:rgba(255,255,255,.7);border:1px solid var(--gray-200);
+      border-radius:12px;padding:1rem 1.2rem;max-width:520px;
+      display:flex;gap:12px;align-items:flex-start;
+    }
+    .testimonial-avatar{
+      width:38px;height:38px;border-radius:50%;flex-shrink:0;
+      background:linear-gradient(135deg,var(--blue),var(--blue-dark));
+      color:white;display:flex;align-items:center;justify-content:center;
+      font-family:var(--font-head);font-size:.85rem;font-weight:700;
+    }
+    .testimonial-text{font-size:.85rem;color:var(--gray-600);line-height:1.55;font-style:italic;}
+    .testimonial-name{display:block;font-family:var(--font-head);font-size:.78rem;color:var(--gray-800);font-weight:700;font-style:normal;margin-top:4px;}
+
+    /* ─── FORMULÁRIO ─── */
+    .form-card{
+      background:white;border-radius:16px;
+      padding:1.75rem 1.5rem;
+      box-shadow:0 24px 60px rgba(24,95,165,0.15),0 8px 20px rgba(0,0,0,0.05);
+      border:1px solid var(--gray-200);
+      position:relative;z-index:2;
+    }
+    .form-head{text-align:center;margin-bottom:1.25rem;}
+    .form-head h2{
+      font-family:var(--font-head);font-size:1.25rem;font-weight:800;
+      color:var(--gray-800);margin-bottom:.3rem;
+    }
+    .form-head p{font-size:.88rem;color:var(--gray-600);}
+
+    .form-group{margin-bottom:.9rem;}
+    .form-group label{
+      display:block;font-family:var(--font-head);font-size:.78rem;font-weight:600;
+      color:var(--gray-600);margin-bottom:5px;
+    }
+    .form-group input{
+      width:100%;padding:.75rem .9rem;
+      border:1.5px solid var(--gray-200);border-radius:9px;
+      font-family:var(--font-body);font-size:.95rem;color:var(--gray-800);
+      background:white;outline:none;transition:border-color .2s;
+    }
+    .form-group input:focus{border-color:var(--blue);}
+
+    .form-submit{
+      width:100%;padding:.85rem;margin-top:.4rem;
+      background:var(--blue);color:white;border:none;border-radius:9px;
+      font-family:var(--font-head);font-size:.95rem;font-weight:700;
+      cursor:pointer;transition:all .2s;
+      box-shadow:0 4px 16px rgba(24,95,165,0.3);
+      display:flex;align-items:center;justify-content:center;gap:8px;
+    }
+    .form-submit:hover{background:var(--blue-dark);transform:translateY(-1px);box-shadow:0 6px 20px rgba(24,95,165,0.4);}
+    .form-submit:disabled{background:var(--gray-400);cursor:not-allowed;transform:none;}
+
+    .form-note{
+      text-align:center;font-size:.74rem;color:var(--gray-400);
+      margin-top:.75rem;line-height:1.5;
+    }
+    .form-note strong{color:var(--green-dark);}
+
+    .form-msg{
+      margin-top:.9rem;padding:.75rem;border-radius:8px;
+      font-size:.84rem;font-weight:600;text-align:center;display:none;
+    }
+    .form-msg.success{background:var(--green-light);color:var(--green-dark);display:block;}
+    .form-msg.error{background:#fef2f2;color:#b91c1c;display:block;}
+
+    .divider{
+      display:flex;align-items:center;margin:1.1rem 0;
+      font-size:.74rem;color:var(--gray-400);font-weight:600;
+      letter-spacing:.08em;text-transform:uppercase;
+    }
+    .divider::before,.divider::after{
+      content:'';flex:1;height:1px;background:var(--gray-200);
+    }
+    .divider span{padding:0 .75rem;}
+
+    .btn-wa{
+      display:flex;align-items:center;justify-content:center;gap:9px;
+      width:100%;padding:.78rem;background:#25D366;color:white;
+      border-radius:9px;font-family:var(--font-head);font-size:.92rem;font-weight:700;
+      text-decoration:none;transition:all .2s;
+    }
+    .btn-wa:hover{background:#128C7E;transform:translateY(-1px);}
+
+    /* ─── WAVE — transição igual ao site principal ─── */
+    .wave-wrap{position:absolute;bottom:0;left:0;right:0;line-height:0;pointer-events:none;z-index:1;}
+    .wave-wrap svg{display:block;width:100%;}
+
+    /* ─── DOBRA 2: BENEFÍCIOS RÁPIDOS ─── */
+    .benefits{
+      background:linear-gradient(180deg,#0a2d4a 0%,#0a2d4a 18%,#0c3d6e 55%,#185FA5 100%);
+      padding:90px 2rem 120px;position:relative;overflow:hidden;color:white;
+    }
+    .benefits-inner{max-width:1180px;margin:0 auto;text-align:center;}
+    .benefits-head{margin-bottom:3rem;}
+    .section-tag{
+      font-family:var(--font-head);font-size:.72rem;font-weight:700;
+      letter-spacing:.1em;text-transform:uppercase;
+      color:#6ee7b7;margin-bottom:.5rem;display:block;
+    }
+    .benefits h2{
+      font-family:var(--font-head);font-size:clamp(1.6rem,2.6vw,2.1rem);
+      font-weight:800;line-height:1.2;color:white;margin-bottom:.6rem;
+    }
+    .benefits h2 em{color:#7dd3fc;font-style:normal;}
+    .benefits-head p{color:rgba(255,255,255,.75);font-size:.98rem;line-height:1.65;max-width:560px;margin:0 auto;}
+
+    .benefits-grid{
+      display:grid;grid-template-columns:repeat(4,1fr);gap:1.25rem;
+      max-width:1080px;margin:0 auto;
+    }
+    .benefit-card{
+      background:rgba(255,255,255,.08);
+      border:1px solid rgba(255,255,255,.15);
+      border-radius:13px;padding:1.5rem 1.25rem;text-align:left;
+      transition:all .25s;
+    }
+    .benefit-card:hover{
+      background:rgba(255,255,255,.12);border-color:rgba(255,255,255,.25);
+      transform:translateY(-2px);
+    }
+    .benefit-icon{
+      width:42px;height:42px;border-radius:10px;
+      background:rgba(125,211,252,.15);
+      display:flex;align-items:center;justify-content:center;
+      margin-bottom:.9rem;
+    }
+    .benefit-card h3{
+      font-family:var(--font-head);font-size:.95rem;font-weight:700;
+      color:white;margin-bottom:.4rem;
+    }
+    .benefit-card p{font-size:.83rem;color:rgba(255,255,255,.65);line-height:1.55;}
+
+    /* ─── DOBRA 3: DEPOIMENTOS ─── */
+    .testimonials{
+      background:var(--gray-50);padding:90px 2rem 100px;
+      position:relative;overflow:hidden;
+    }
+    .testimonials-inner{max-width:1080px;margin:0 auto;text-align:center;}
+    .testimonials-head{margin-bottom:2.5rem;}
+    .testimonials h2{
+      font-family:var(--font-head);font-size:clamp(1.6rem,2.6vw,2.1rem);
+      font-weight:800;line-height:1.2;color:var(--gray-800);margin-bottom:.6rem;
+    }
+    .testimonials h2 em{color:var(--blue);font-style:normal;}
+
+    .testimonials-grid{
+      display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem;
+    }
+    .tcard{
+      background:white;border:1px solid var(--gray-200);border-radius:14px;
+      padding:1.75rem;text-align:left;transition:all .25s;
+    }
+    .tcard:hover{
+      border-color:rgba(24,95,165,0.2);
+      box-shadow:0 12px 32px rgba(24,95,165,0.08);
+      transform:translateY(-2px);
+    }
+    .tcard-quote{font-size:.95rem;color:var(--gray-800);line-height:1.7;margin-bottom:1.1rem;font-style:italic;}
+    .tcard-quote::before{content:'"';color:var(--blue);font-size:2rem;font-weight:800;line-height:0;vertical-align:-.4em;margin-right:4px;}
+    .tcard-footer{display:flex;align-items:center;gap:12px;border-top:1px solid var(--gray-100);padding-top:1rem;}
+    .tcard-avatar{
+      width:44px;height:44px;border-radius:50%;flex-shrink:0;
+      background:linear-gradient(135deg,var(--blue),var(--blue-dark));
+      color:white;display:flex;align-items:center;justify-content:center;
+      font-family:var(--font-head);font-size:1rem;font-weight:700;
+    }
+    .tcard-info strong{display:block;font-family:var(--font-head);font-size:.92rem;color:var(--gray-800);}
+    .tcard-info span{display:block;font-size:.82rem;color:var(--gray-400);}
+
+    /* ─── CTA FINAL ─── */
+    .cta-final{
+      background:linear-gradient(135deg,var(--blue-dark),var(--blue));
+      padding:64px 2rem;color:white;text-align:center;
+    }
+    .cta-final-inner{max-width:680px;margin:0 auto;}
+    .cta-final h2{
+      font-family:var(--font-head);font-size:clamp(1.5rem,2.4vw,1.9rem);
+      font-weight:800;color:white;margin-bottom:.6rem;line-height:1.2;
+    }
+    .cta-final p{color:rgba(255,255,255,.8);font-size:.98rem;margin-bottom:1.75rem;line-height:1.6;}
+    .cta-final .actions{display:flex;gap:.75rem;justify-content:center;flex-wrap:wrap;}
+    .btn-light{
+      display:inline-flex;align-items:center;gap:8px;
+      background:white;color:var(--blue);padding:.85rem 1.75rem;
+      border-radius:9px;font-family:var(--font-head);font-size:.95rem;font-weight:700;
+      text-decoration:none;transition:all .2s;
+    }
+    .btn-light:hover{transform:translateY(-1px);box-shadow:0 8px 20px rgba(0,0,0,.2);}
+    .btn-outline-light{
+      display:inline-flex;align-items:center;gap:8px;
+      background:transparent;color:white;padding:.85rem 1.75rem;
+      border:1.5px solid rgba(255,255,255,.4);border-radius:9px;
+      font-family:var(--font-head);font-size:.95rem;font-weight:700;
+      text-decoration:none;transition:all .2s;
+    }
+    .btn-outline-light:hover{background:rgba(255,255,255,.1);border-color:white;}
+
+    /* ─── FOOTER ─── */
+    footer{background:#0a1628;color:rgba(255,255,255,.5);padding:2rem;text-align:center;}
+    footer .foot-logo{display:flex;align-items:center;justify-content:center;gap:10px;margin-bottom:.6rem;}
+    footer .foot-logo span{font-family:var(--font-head);font-size:1rem;font-weight:800;color:white;}
+    footer p{font-size:.82rem;line-height:1.6;}
+    footer a{color:rgba(255,255,255,.7);text-decoration:none;}
+    footer a:hover{color:white;}
+
+    /* ─── WHATSAPP FLUTUANTE ─── */
+    .whatsapp-float{
+      position:fixed;bottom:24px;right:24px;z-index:999;
+      width:54px;height:54px;border-radius:50%;background:#25D366;
+      display:flex;align-items:center;justify-content:center;
+      box-shadow:0 4px 18px rgba(37,211,102,.5);
+      text-decoration:none;animation:pulse-wa 2.5s infinite;
+    }
+    .whatsapp-float:hover{background:#128C7E;transform:scale(1.08);}
+    @keyframes pulse-wa{
+      0%{box-shadow:0 0 0 0 rgba(37,211,102,.5);}
+      70%{box-shadow:0 0 0 12px rgba(37,211,102,0);}
+      100%{box-shadow:0 0 0 0 rgba(37,211,102,0);}
+    }
+
+    /* ─── RESPONSIVE ─── */
+    @media(max-width:900px){
+      .hero{padding:90px 1.25rem 140px;min-height:auto;}
+      .hero-inner{grid-template-columns:1fr;gap:2rem;}
+      .hero-feats{grid-template-columns:1fr;}
+      .benefits-grid{grid-template-columns:repeat(2,1fr);}
+      .testimonials-grid{grid-template-columns:1fr;}
+      .nav-trust{display:none;}
+    }
+    @media(max-width:520px){
+      .benefits-grid{grid-template-columns:1fr;}
+      .hero-feats{grid-template-columns:1fr;gap:.5rem;}
+    }
+
+    /* ─── ANIMATIONS ─── */
+    @keyframes fadeUp{
+      from{opacity:0;transform:translateY(20px);}
+      to{opacity:1;transform:translateY(0);}
+    }
+    .hero-content>*{animation:fadeUp .6s ease both;}
+    .hero-content>*:nth-child(1){animation-delay:.1s;}
+    .hero-content>*:nth-child(2){animation-delay:.2s;}
+    .hero-content>*:nth-child(3){animation-delay:.3s;}
+    .hero-content>*:nth-child(4){animation-delay:.4s;}
+    .hero-content>*:nth-child(5){animation-delay:.5s;}
+    .form-card{animation:fadeUp .6s ease .3s both;}
+  </style>
+</head>
+
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="https://www.appmedpronto.com.br" class="nav-logo">
+    <div class="nav-logo-icon">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M4.8 2.3A.3.3 0 1 0 5 2H4a2 2 0 0 0-2 2v5a6 6 0 0 0 6 6 6 6 0 0 0 6-6V4a2 2 0 0 0-2-2h-1a.3.3 0 1 0 .2.3"/>
+        <path d="M8 15v1a6 6 0 0 0 6 6v0a6 6 0 0 0 6-6v-4"/>
+        <circle cx="20" cy="10" r="2"/>
+      </svg>
+    </div>
+    <span>MedPronto</span>
+  </a>
+  <div class="nav-spacer"></div>
+  <div class="nav-trust">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#1D9E75" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+    <span><strong>7 dias grátis</strong> · sem cartão</span>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-content">
+      <div class="hero-badge"><span class="dot"></span> Sistema completo para clínicas</div>
+      <h1>Gestão clínica completa em <em>uma única plataforma</em></h1>
+      <p class="hero-sub">Agenda, prontuário eletrônico, faturamento e DRE integrados. Reduza processos manuais e ganhe controle total sobre os resultados do seu consultório.</p>
+
+      <div class="hero-feats">
+        <div class="hero-feat">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#1D9E75" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+          Agenda inteligente
+        </div>
+        <div class="hero-feat">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#1D9E75" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+          Prontuário eletrônico
+        </div>
+        <div class="hero-feat">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#1D9E75" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+          Faturamento e convênios
+        </div>
+        <div class="hero-feat">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#1D9E75" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+          DRE financeiro completo
+        </div>
+      </div>
+
+      <div class="testimonial">
+        <div class="testimonial-avatar">RF</div>
+        <div>
+          <div class="testimonial-text">"Reduzi em 60% o tempo gasto com tarefas administrativas. Agora foco no que importa: meus pacientes."</div>
+          <span class="testimonial-name">Dr. R. Ferreira — Clínica Geral, RJ</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- FORMULÁRIO -->
+    <div class="form-card">
+      <div class="form-head">
+        <h2>Solicite uma demonstração</h2>
+        <p>Receba uma demonstração personalizada em até 24h</p>
+      </div>
+
+      <form id="lead-form">
+        <div class="form-group">
+          <label for="c-nome">Nome completo *</label>
+          <input type="text" id="c-nome" name="nome" placeholder="Dr. João Silva" required/>
+        </div>
+        <div class="form-group">
+          <label for="c-whatsapp">WhatsApp *</label>
+          <input type="tel" id="c-whatsapp" name="whatsapp" placeholder="(21) 99999-9999" required/>
+        </div>
+        <button type="submit" class="form-submit" id="f-btn">
+          Quero minha demonstração gratuita
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+        </button>
+        <p class="form-note"><strong>Sem compromisso.</strong> Retornamos em até 24h.</p>
+        <div class="form-msg" id="f-feedback"></div>
+      </form>
+
+      <div class="divider"><span>ou</span></div>
+
+      <a href="https://wa.me/5521998579091?text=Olá!%20Quero%20saber%20mais%20sobre%20o%20MedPronto" class="btn-wa" target="_blank">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Falar agora no WhatsApp
+      </a>
+    </div>
+  </div>
+
+  <!-- Wave para a próxima seção (azul escuro) -->
+  <div class="wave-wrap">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 100" style="height:100px" preserveAspectRatio="none">
+      <defs>
+        <linearGradient id="gradDark1" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#7a9bc4" stop-opacity="1"/>
+          <stop offset="100%" stop-color="#0a2d4a" stop-opacity="1"/>
+        </linearGradient>
+      </defs>
+      <path d="M0,10 C480,70 960,0 1440,55 L1440,100 L0,100 Z" fill="url(#gradDark1)"/>
+    </svg>
+  </div>
+</section>
+
+<!-- DOBRA 2: BENEFÍCIOS -->
+<section class="benefits">
+  <div class="benefits-inner">
+    <div class="benefits-head">
+      <span class="section-tag">Por que MedPronto</span>
+      <h2>Tudo que sua clínica precisa, <em>em uma só ferramenta</em></h2>
+      <p>Desenvolvido para clínicas brasileiras que querem crescer com organização e resultado.</p>
+    </div>
+
+    <div class="benefits-grid">
+      <div class="benefit-card">
+        <div class="benefit-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#7dd3fc" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+        </div>
+        <h3>Agenda inteligente</h3>
+        <p>Visualização semanal, agendamento rápido e relatórios diários em PDF.</p>
+      </div>
+
+      <div class="benefit-card">
+        <div class="benefit-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#7dd3fc" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/></svg>
+        </div>
+        <h3>Prontuário eletrônico</h3>
+        <p>Anamnese, sinais vitais, prescrições e exames em uma única tela.</p>
+      </div>
+
+      <div class="benefit-card">
+        <div class="benefit-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#7dd3fc" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+        </div>
+        <h3>Faturamento e DRE</h3>
+        <p>Gestão de convênios, contas a pagar e DRE completo exportável.</p>
+      </div>
+
+      <div class="benefit-card">
+        <div class="benefit-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#7dd3fc" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <h3>Seguro e em nuvem</h3>
+        <p>Backup automático, criptografia SSL e conformidade com a LGPD.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DOBRA 3: DEPOIMENTOS -->
+<section class="testimonials">
+  <div class="testimonials-inner">
+    <div class="testimonials-head">
+      <span class="section-tag" style="color:var(--green);">Quem usa, recomenda</span>
+      <h2>Médicos que <em>já transformaram</em> a gestão da clínica</h2>
+    </div>
+
+    <div class="testimonials-grid">
+      <div class="tcard">
+        <div class="tcard-quote">O controle de convênios era um pesadelo. Com o MedPronto tudo ficou centralizado e consigo ver em tempo real quanto cada convênio está gerando. Não abro mão.</div>
+        <div class="tcard-footer">
+          <div class="tcard-avatar">CM</div>
+          <div class="tcard-info">
+            <strong>Dra. C. Mendonça</strong>
+            <span>Pediatria · Rio de Janeiro</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="tcard">
+        <div class="tcard-quote">Reduzi em 60% o tempo gasto com tarefas administrativas. Agora foco no que realmente importa: meus pacientes e o crescimento da clínica.</div>
+        <div class="tcard-footer">
+          <div class="tcard-avatar">RF</div>
+          <div class="tcard-info">
+            <strong>Dr. R. Ferreira</strong>
+            <span>Clínica Geral · Rio de Janeiro</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<section class="cta-final">
+  <div class="cta-final-inner">
+    <h2>Pronto para modernizar a gestão da sua clínica?</h2>
+    <p>Solicite uma demonstração gratuita ou converse direto pelo WhatsApp.</p>
+    <div class="actions">
+      <a href="#" onclick="document.getElementById('c-nome').focus();return false;" class="btn-light">
+        Solicitar demonstração
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+      </a>
+      <a href="https://wa.me/5521998579091?text=Olá!%20Quero%20saber%20mais%20sobre%20o%20MedPronto" target="_blank" class="btn-outline-light">
+        Falar no WhatsApp
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="foot-logo">
+    <div style="width:28px;height:28px;border-radius:7px;background:var(--blue);display:flex;align-items:center;justify-content:center">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M4.8 2.3A.3.3 0 1 0 5 2H4a2 2 0 0 0-2 2v5a6 6 0 0 0 6 6 6 6 0 0 0 6-6V4a2 2 0 0 0-2-2h-1a.3.3 0 1 0 .2.3"/><path d="M8 15v1a6 6 0 0 0 6 6v0a6 6 0 0 0 6-6v-4"/><circle cx="20" cy="10" r="2"/></svg>
+    </div>
+    <span>MedPronto</span>
+  </div>
+  <p>Sistema de Gestão Clínica · <a href="https://www.appmedpronto.com.br">www.appmedpronto.com.br</a></p>
+  <p style="margin-top:.4rem;font-size:.75rem;">© 2026 MedPronto. Todos os direitos reservados.</p>
+</footer>
+
+<!-- WHATSAPP FLUTUANTE -->
+<a href="https://wa.me/5521998579091?text=Olá!%20Quero%20saber%20mais%20sobre%20o%20MedPronto" target="_blank" class="whatsapp-float" title="Fale conosco no WhatsApp">
+  <svg width="26" height="26" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<script>
+document.getElementById('lead-form').addEventListener('submit', function(e) {
+  e.preventDefault();
+  var btn = document.getElementById('f-btn');
+  var fb = document.getElementById('f-feedback');
+  btn.disabled = true;
+  btn.innerHTML = 'Enviando...';
+  fb.className = 'form-msg';
+
+  var data = {
+    nome: document.getElementById('c-nome').value,
+    whatsapp: document.getElementById('c-whatsapp').value,
+    origem: 'Campanha Email Marketing - LP v2'
+  };
+
+  fetch('https://formspree.io/f/mbdbpzaz', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+    body: JSON.stringify(data)
+  }).then(function(res) {
+    if (res.ok) {
+      fb.textContent = '✅ Recebemos seu contato! Nossa equipe entrará em contato em breve.';
+      fb.className = 'form-msg success';
+      document.getElementById('lead-form').reset();
+      if (typeof gtag === 'function') {
+        gtag('event', 'generate_lead', { 'event_category': 'campanha', 'event_label': 'formulario' });
+      }
+    } else {
+      throw new Error();
+    }
+  }).catch(function() {
+    fb.textContent = '⚠️ Erro ao enviar. Fale conosco pelo WhatsApp!';
+    fb.className = 'form-msg error';
+  }).finally(function() {
+    btn.disabled = false;
+    btn.innerHTML = 'Quero minha demonstração gratuita <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>';
+  });
+});
+</script>
+
+</body>
+</html>
